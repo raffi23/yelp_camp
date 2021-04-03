@@ -16,15 +16,12 @@ const campgroundRoutes = require("./routes/campgrounds"),
   indexRoutes = require("./routes/index");
 
 mongoose
-  .connect(
-    "mongodb+srv://raffi23:2331@cluster0.u47wq.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    }
-  )
+  .connect("mongodb://127.0.0.1/yelp_camp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+  })
   .then(function () {
     console.log("connected to DB!");
   })
